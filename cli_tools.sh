@@ -8,7 +8,7 @@ echo 'export INFOPATH="/home/linuxbrew/.linuxbrew/share/info:"' >> ~/.bashrc
 
 source  ~/.bashrc
 brew tap weaveworks/tap
-brew install kubernetes-cli kubernetes-helm weaveworks/tap/eksctl
+brew install kubernetes-cli weaveworks/tap/eksctl
 
 
 source  ~/.bash_profile
