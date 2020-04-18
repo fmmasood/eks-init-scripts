@@ -9,6 +9,9 @@ sudo yum groupinstall 'Development Tools' -y
 #brew tap weaveworks/tap
 #brew install kubernetes-cli weaveworks/tap/eksctl
 
+echo ">>> install awscli "
+pip3 install --upgrade --user awscli
+
 echo ">>> install kubectl"
 curl -LO https://storage.googleapis.com/kubernetes-release/release/`curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt`/bin/linux/amd64/kubectl
 chmod +x ./kubectl 
