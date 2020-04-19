@@ -9,14 +9,20 @@ sudo yum groupinstall 'Development Tools' -y
 #brew tap weaveworks/tap
 #brew install kubernetes-cli weaveworks/tap/eksctl
 
-echo ">>> install awscli "
+echo ">>> install jq"
+sudo yum install jq -y
+
+echo ">>> update awscli "
 pip3 install --upgrade --user awscli
 
-echo ">>> install kubectl"
+echo ">>> update kubectl"
 curl -LO https://storage.googleapis.com/kubernetes-release/release/`curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt`/bin/linux/amd64/kubectl
-chmod +x ./kubectl 
+
+echo ">>> chmod +x kubectl"
+chmod +x kubectl 
 export PATH=$PWD/:$PATH
-
-
 source  ~/.bash_profile
+
+echo ">>> update kubeconfig "
+aws eks update-kubeconfig --name 'EKS-Lab'
 
